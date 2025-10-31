@@ -78,3 +78,12 @@ CORS_ALLOW_ALL_ORIGINS = True
 TRIPADVISOR_API_KEY = os.getenv("TRIPADVISOR_API_KEY", "")
 
 TRIPADVISOR_REFERER = os.getenv("TRIPADVISOR_REFERER", "")  
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "LOCATION": "unique-snowflake",
+    }
+}
+
+TRIPADVISOR_CACHE_TIMEOUT = 60 * 5  
